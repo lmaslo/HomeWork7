@@ -1,25 +1,38 @@
-plugins {
+plugins{
     id 'java'
 }
-compileTestJava {
-    options.encoding = 'UTF-8'
-}
-
-group 'guru.qa'
-version '1.0'
 
 repositories {
     mavenCentral()
 }
 
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
-    testImplementation (
+    testImplementation(
+            'com.codeborne:selenide:6.3.2',
             'org.junit.jupiter:junit-jupiter:5.8.2',
-            'com.codeborne:selenide:6.3.3'
     )
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    testRuntimeOnly(
+            'org.junit.jupiter:junit-jupiter-engine:5.8.2',
+            "org.slf4j:slf4j-simple:1.7.32"
+    )
+
 }
 
 test {
     useJUnitPlatform()
 }
+

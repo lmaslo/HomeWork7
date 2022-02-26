@@ -1,4 +1,7 @@
+package allure;
+
 import com.codeborne.selenide.Condition;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -7,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideTest {
 
+    @Test
     public void testIssueSearch(){
         open("https://github.com/");
         $(".header-search-input").click();
