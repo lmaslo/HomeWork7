@@ -38,7 +38,7 @@ public class Steps {
 
     @Step("Проверяем текст")
     public void checkText(String text) {
-        $(withText(text)).should(Condition.exist);
+        $(withText(text)).should(Condition.visible);
     }
 
     //добавить скриншот
