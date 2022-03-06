@@ -16,14 +16,14 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.addAttachment;
 import static io.qameta.allure.Allure.step;
 
-//тест
+@Feature("Задачи в репозитории")
+
 public class IssuseTests {
 
     private static final String Repository = "lmaslo/HomeWork7";
     private static final String IssuesText = "Allure Report";
 
     @Test
-    @Feature("Задачи в репозитории")
     @Story("Поиск Issue Listener")
     public void checkIssueText() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -41,7 +41,7 @@ public class IssuseTests {
     @Test
     @Owner("Lena")
     @Severity(SeverityLevel.NORMAL)
-    @Feature("Задачи в репозитории")
+    //@Feature("Задачи в репозитории")
     @Story("Поиск Issue, с использованием step.")
     @DisplayName("Поиск заданого Issue")
     @Description("Этот тест проверят существование Issue, с текстом " + IssuesText)
@@ -80,7 +80,7 @@ public class IssuseTests {
     public void checkIssueAnnotatedSteps() {
         Allure.label("owner", "Lena");
         Allure.label("severity", SeverityLevel.NORMAL.value());
-        Allure.feature("Задачи в репозитории");
+       // Allure.feature("Задачи в репозитории");
         Allure.story("Поиск Issue, с использованием анотации step");
         Allure.getLifecycle().updateTestCase(testCase -> {
             testCase.setName("Поиск заданого Issue");
