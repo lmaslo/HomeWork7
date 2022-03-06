@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-
+//test
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -17,14 +17,13 @@ import static io.qameta.allure.Allure.addAttachment;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Задачи в репозитории")
-
+@Story("Поиск Issue Listener")
 public class IssuseTests {
 
     private static final String Repository = "lmaslo/HomeWork7";
     private static final String IssuesText = "Allure Report";
 
     @Test
-    @Story("Поиск Issue Listener")
     public void checkIssueText() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open("https://github.com/");
@@ -42,7 +41,7 @@ public class IssuseTests {
     @Owner("Lena")
     @Severity(SeverityLevel.NORMAL)
     //@Feature("Задачи в репозитории")
-    @Story("Поиск Issue, с использованием step.")
+    //@Story("Поиск Issue, с использованием step.")
     @DisplayName("Поиск заданого Issue")
     @Description("Этот тест проверят существование Issue, с текстом " + IssuesText)
     @Link(value = "Testing", url = "https://github.com")
@@ -81,7 +80,7 @@ public class IssuseTests {
         Allure.label("owner", "Lena");
         Allure.label("severity", SeverityLevel.NORMAL.value());
        // Allure.feature("Задачи в репозитории");
-        Allure.story("Поиск Issue, с использованием анотации step");
+      //  Allure.story("Поиск Issue, с использованием анотации step");
         Allure.getLifecycle().updateTestCase(testCase -> {
             testCase.setName("Поиск заданого Issue");
         });
