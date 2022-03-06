@@ -16,6 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.addAttachment;
 import static io.qameta.allure.Allure.step;
 
+//тест
 public class IssuseTests {
 
     private static final String Repository = "lmaslo/HomeWork7";
